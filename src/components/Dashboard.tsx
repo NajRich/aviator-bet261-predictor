@@ -4,6 +4,7 @@ import { Plane, TrendingUp, AlertTriangle, Activity } from "lucide-react";
 import { StatsChart } from "./StatsChart";
 import { LiveIndicator } from "./LiveIndicator";
 import { RiskWarning } from "./RiskWarning";
+import { PredictionCalculator } from "./PredictionCalculator";
 
 export const Dashboard = () => {
   return (
@@ -76,6 +77,31 @@ export const Dashboard = () => {
             <CardContent>
               <div className="text-2xl font-bold text-primary">47.8x</div>
               <p className="text-xs text-muted-foreground">il y a 3h</p>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Prediction Calculator */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="lg:col-span-2">
+            <PredictionCalculator />
+          </div>
+          <Card className="bg-gradient-card border-border/50 shadow-card">
+            <CardHeader>
+              <CardTitle>Conseils d'Analyse</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3 text-sm">
+                <div className="p-3 bg-success/10 rounded-lg border border-success/20">
+                  <strong className="text-success">Bonne période :</strong> Plus de 100 tours analysés donnent des tendances plus fiables.
+                </div>
+                <div className="p-3 bg-warning/10 rounded-lg border border-warning/20">
+                  <strong className="text-warning">Attention :</strong> Les patterns peuvent changer rapidement.
+                </div>
+                <div className="p-3 bg-info/10 rounded-lg border border-info/20">
+                  <strong className="text-info">Astuce :</strong> Analysez 50-200 tours pour un bon équilibre.
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
